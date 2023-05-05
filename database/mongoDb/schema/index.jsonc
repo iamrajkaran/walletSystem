@@ -1,0 +1,102 @@
+// Create db
+use wallet
+
+// Create collections
+db.createCollection("wallet")
+db.createCollection("user")
+db.createCollection("transaction")
+
+// schema validation for wallet
+db.runCommand({
+    "collMod": "wallet",
+    "validator": {
+        $jsonSchema: {
+            "bsonType": "object",
+            "description": "Document describing wallet collection",
+            "required": [
+                "balance",
+                "date",
+            ],
+            "properties": {
+                "balance": {
+                    "bsonType": "number",
+                    "description": "balance info",
+                },
+                "date": {
+                    "bsonType": "date",
+                    "description": "created date",
+                },
+            },
+        }
+    }
+})
+
+// schema validation for user
+db.runCommand({
+    "collMod": "user",
+    "validator": {
+        $jsonSchema: {
+            "bsonType": "object",
+            "description": "Document describing user collection",
+            "required": [
+                "name",
+                "date",
+            ],
+            "properties": {
+                "name": {
+                    "bsonType": "string",
+                    "description": "name",
+                },
+                "date": {
+                    "bsonType": "date",
+                    "description": "created date",
+                },
+            },
+        }
+    }
+})
+
+// schema validation for transaction
+db.runCommand({
+    "collMod": "transaction",
+    "validator": {
+        $jsonSchema: {
+            "bsonType": "object",
+            "description": "Document describing transaction collection",
+            "required": [
+                "walletId",
+                "amount",
+                "balance",
+                "description",
+                "date",
+                "type",
+            ],
+            "properties": {
+                "walletId": {
+                    "bsonType": "objectId",
+                    "description": "wallet id",
+                },
+                "amount": {
+                    "bsonType": "number",
+                    "description": "amount of wallet",
+                },
+                "balance": {
+                    "bsonType": "number",
+                    "description": "balance after transaction",
+                },
+                "description": {
+                    "bsonType": "string",
+                    "description": "description of transaction",
+                },
+                "date": {
+                    "bsonType": "date",
+                    "description": "created date",
+                },
+                "type": {
+                    "bsonType": "string",
+                    "description": "CREDIT/DEBIT",
+                },
+            },
+        }
+    }
+})

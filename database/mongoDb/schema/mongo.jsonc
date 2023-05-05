@@ -1,0 +1,23 @@
+{
+    "transactions": {
+        "_id": "123cewc32322323d",
+        "walletId": "323cewc32322323d",
+        "amount": 20,
+        "balance": 40,
+        "description": "recharge",
+        "date": "new Date()",
+        "type": "CREDIT/'DEBIT"
+    },
+    "wallet": {
+        "_id": "423cewc32322323d",
+        "balance": 40,
+        "userid": "523cewc32322323d",
+        "date": "new Date()"
+    },
+    "user": {
+        "_id": "523cewc32322323d",
+        "name": "Highlevel",
+        "date": "new Date()"
+    },
+}
+
