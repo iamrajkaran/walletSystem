@@ -84,17 +84,22 @@ Functional Requirements:
             }
 
 Miscellaneous
+
     postman_walletSystem.json collection is present in file to get all APIS
     sample_requests.md for sample requests and response
     Mongo documents sample data: /walletSystem/database/mongoDb/schema/mongo.jsonc
 
 What not covered:
+
     Transactions due to read replica not setup at local, but code is written placed
     and commented for Transactions.
 
 Setup:
+
     1. Install Node v 12.22.11
     2. Intall Mongodb: 5.0.7
     3. Run queries from /walletSystem/database/mongoDb/schema/index.jsonc in mongo after installing it.
     4. Please setup your mongo and node as per your Requirement in .env file
 
+Please go through walletUI to run it wth UI
+https://github.com/iamrajkaran/walletUI
